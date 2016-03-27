@@ -134,6 +134,7 @@ public class BestandController
     public void onButtonBackClicked(ActionEvent actionEvent)
     {
         Stage stage = (Stage) buttonBack.getScene().getWindow();
+        stage.setTitle("WinRAR");
 
         FXMLLoader        loader      = new FXMLLoader(getClass().getResource("hoofdscherm.fxml"));
         Controller controller = new Controller();

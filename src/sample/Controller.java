@@ -53,19 +53,37 @@ public class Controller {
         imageBestand.setImage(bestandImage);
         imageControle.setImage(controleImage);
         imageZoek.setImage(zoekImage);
-//        imageControle.setImage(new Image("file:/E:/School/JCF41/winRar/out/production/winRar/sample/resource/criminal2.jpg"));
     }
 
     public void onInputZoekMouseClicked(Event event)
     {
         //Zoeken clicked
         System.out.println("You clicked \"Zoeken\"");
+        Stage stage = (Stage) imageBestand.getScene().getWindow();
+        stage.setTitle("WinRAR - Zoeken");
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("zoeken.fxml"));
+        ZoekenController zController = new ZoekenController();
+        loader.setController(zController);
+
+        Parent root = null;
+        try
+        {
+            root = loader.load();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        stage.setScene(new Scene(root, 640, 480));
     }
 
     public void onImageBestandMouseClicked(Event event)
     {
         System.out.println("You clicked \"Bestand\"");
         Stage stage = (Stage) imageBestand.getScene().getWindow();
+        stage.setTitle("WinRAR - Bestand");
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("bestand.fxml"));
         BestandController bController = new BestandController();
@@ -90,6 +108,26 @@ public class Controller {
     {
         //Controle clicked
         System.out.println("You clicked \"Controle\"");
+        Stage stage = (Stage) imageBestand.getScene().getWindow();
+        stage.setTitle("WinRAR - Controle");
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("controle.fxml"));
+        ControleController cController = new ControleController();
+        loader.setController(cController);
+
+        Parent root = null;
+        try
+        {
+            root = loader.load();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        stage.setScene(new Scene(root, 640, 480));
+
+        cController.setStartImages();
     }
 
     //region image setting
