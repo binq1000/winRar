@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ImageView id="imageZoek" fx:id="imageZoek" fitHeight="150.0" fitWidth="150.0" layoutX="14.0" layoutY="125.0" onMouseClicked="#onInputZoekMouseClicked" onMouseEntered="#onImageZoekMouseEntered" onMouseExited="#onImageZoekMouseExited" pickOnBounds="true" preserveRatio="true" />
+        <ImageView id="imageBestand" fx:id="imageBestand" fitHeight="150.0" fitWidth="150.0" layoutX="225.0" layoutY="125.0" onMouseClicked="#onImageBestandMouseClicked" onMouseEntered="#onImageBestandMouseEntered" onMouseExited="#onImageBestandMouseExited" pickOnBounds="true" preserveRatio="true" />
+        <ImageView id="imageControle" fx:id="imageControle" fitHeight="150.0" fitWidth="150.0" layoutX="436.0" layoutY="125.0" onMouseClicked="#onImageControleMouseClicked" onMouseEntered="#onImageControleMouseEntered" onMouseExited="#onImageControleMouseExited" pickOnBounds="true" preserveRatio="true" />
+    </children>
+</AnchorPane>
