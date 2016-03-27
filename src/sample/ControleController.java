@@ -104,34 +104,42 @@ public class ControleController
 
     public void onImageVirusMouseEntered(Event event)
     {
+        imageVirus.setImage(hoverVirusImage);
     }
 
     public void onImageVirusMouseExited(Event event)
     {
+        imageVirus.setImage(virusImage);
     }
 
     public void onImageRapportMouseEntered(Event event)
     {
+        imageRapport.setImage(hoverRapportImage);
     }
 
     public void onImageRapportMouseExited(Event event)
     {
+        imageRapport.setImage(rapportImage);
     }
 
     public void onImageTestenMouseEntered(Event event)
     {
+        imageTesten.setImage(hoverTestenImage);
     }
 
     public void onImageLogobkeMouseExited(Event event)
     {
+        imageLogboek.setImage(testenImage);
     }
 
     public void onImageTestenMouseExited(Event event)
     {
+        imageTesten.setImage(virusImage);
     }
 
     public void onImageLogboekMouseEntered(Event event)
     {
+        imageLogboek.setImage(hoverLogboekImage);
     }
     //endregion
 }
