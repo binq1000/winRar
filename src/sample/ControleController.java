@@ -9,8 +9,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -23,6 +29,7 @@ public class ControleController
     @FXML public ImageView imageTesten;
     @FXML public ImageView imageLogboek;
     @FXML public Button buttonBack;
+    @FXML public AnchorPane anchorPane;
 
     private Image virusImage;
     private Image hoverVirusImage;
@@ -32,6 +39,8 @@ public class ControleController
     private Image hoverTestenImage;
     private Image logboekImage;
     private Image hoverLogboekImage;
+
+    private FileChooser fileChooser;
 
     public ControleController() {
         //Do not use any FXML here
@@ -48,42 +57,59 @@ public class ControleController
         logboekImage = new Image(String.valueOf(getClass().getResource("resource/criminal4.jpg")));
         hoverLogboekImage = new Image(String.valueOf(getClass().getResource("resource/criminal1.jpg")));
 
+
+        setFilteredExplorer();
     }
 
     public void onImageVirusClicked(Event event)
     {
 
         System.out.println("You clicked \"Virus Controlle\"");
-        openExplorer();
+        File f = getFile();
+        createDialog("You just scanned" + System.lineSeparator() + f.getName() + " for virusses");
     }
 
-    private void openExplorer() {
-        try
-        {
-            Runtime.getRuntime().exec("explorer C:\\bin");
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+    public void createDialog(String s) {
+        final Stage dialog = new Stage();
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        VBox dialogVbox = new VBox(20);
+        dialogVbox.getChildren().add(new Text(s));
+        Scene dialogScene = new Scene(dialogVbox, 200 , 100);
+        dialog.setScene(dialogScene);
+        dialog.show();
     }
 
     public void onImageRapportClicked(Event event)
     {
         System.out.println("You clicked \"Rapport genereren\"");
-        openExplorer();
+        createDialog("Look at this awesome Rapport \n ow wait where did it go?");
+    }
+
+    private void setFilteredExplorer() {
+        fileChooser = new FileChooser();
+        fileChooser.setTitle("Open winrar file");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Zip and RAR", "*.zip", "*.rar"));
+    }
+
+    public File getFile() {
+        File f = null;
+        while (f == null) {
+            f = fileChooser.showOpenDialog(anchorPane.getScene().getWindow());
+        }
+        return f;
     }
 
     public void onImageTestenClicked(Event event)
     {
         System.out.println("You clicked \"Testen\"");
-        openExplorer();
+        File f = getFile();
+        createDialog("You tested: " + f.getName());
     }
 
     public void onImageLogboekClicked(Event event)
     {
         System.out.println("You clicked \"Logboek weergeven\"");
-        openExplorer();
+        createDialog("Showing an invisible log at the moment!");
     }
 
     public void onButtonBackClicked(ActionEvent actionEvent)
