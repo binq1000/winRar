@@ -101,8 +101,7 @@ public class BestandController
     private void setFilteredExplorer() {
         fileChooser = new FileChooser();
         fileChooser.setTitle("Open winrar file");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Zip", "*.zip"));
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("RAR", "*.rar"));
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Zip and RAR", "*.zip", "*.rar"));
     }
 
     //region Image setting
