@@ -77,6 +77,8 @@ public class Controller {
         }
 
         stage.setScene(new Scene(root, 640, 480));
+
+        zController.setData();
     }
 
     public void onImageBestandMouseClicked(Event event)

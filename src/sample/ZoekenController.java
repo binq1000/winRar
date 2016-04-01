@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -24,6 +25,19 @@ public class ZoekenController
 
     public ZoekenController() {
         //Do not use FXML in the constructor
+    }
+
+    public void setData() {
+        for (File f : File.listRoots()) {
+            System.out.println(f.toString());
+            fileStuff(f);
+        }
+    }
+
+    public void fileStuff(File f) {
+        if (f.isDirectory()) {
+            f.canRead();
+        }
     }
     
     public void onButtonBackClicked(ActionEvent actionEvent)

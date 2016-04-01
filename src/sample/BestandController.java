@@ -9,8 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -24,6 +27,9 @@ public class BestandController
     @FXML public ImageView imageVerwijderen;
     @FXML public ImageView imageWijzigen;
     @FXML public Button buttonBack;
+    @FXML public AnchorPane anchorPane;
+
+    private FileChooser fileChooser;
 
     private Image uitpakkenImage;
     private Image hoverUitpakkenImage;
@@ -51,6 +57,8 @@ public class BestandController
 
         wijzigenImage = new Image(String.valueOf(getClass().getResource("resource/criminal4.jpg")));
         hoverWijzigenImage = new Image(String.valueOf(getClass().getResource("resource/criminal1.jpg")));
+
+        setFilteredExplorer();
     }
 
     public void setStartImages() {
@@ -65,21 +73,36 @@ public class BestandController
     {
         //Uitpakken clicked
         System.out.println("You clicked \"Uitpakken\"");
+        openExplorer();
     }
     public void onImageWeergevenClicked(Event event)
     {
         //Weergeven Clicked
         System.out.println("You clicked \"Weergeven\"");
+        openExplorer();
     }
     public void onImageVerwijderenClicked(Event event)
     {
         //Verwijderen clicked
         System.out.println("You clicked \"Verwijderen\"");
+        openExplorer();
     }
     public void onImageWijzigenClicked(Event event)
     {
         //Wijzigen clicked
         System.out.println("You clicked \"Wijzigen\"");
+        openExplorer();
+    }
+
+    private void openExplorer() {
+        fileChooser.showOpenDialog(anchorPane.getScene().getWindow());
+    }
+
+    private void setFilteredExplorer() {
+        fileChooser = new FileChooser();
+        fileChooser.setTitle("Open winrar file");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Zip", "*.zip"));
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("RAR", "*.rar"));
     }
 
     //region Image setting

@@ -52,22 +52,38 @@ public class ControleController
 
     public void onImageVirusClicked(Event event)
     {
+
         System.out.println("You clicked \"Virus Controlle\"");
+        openExplorer();
+    }
+
+    private void openExplorer() {
+        try
+        {
+            Runtime.getRuntime().exec("explorer C:\\bin");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void onImageRapportClicked(Event event)
     {
         System.out.println("You clicked \"Rapport genereren\"");
+        openExplorer();
     }
 
     public void onImageTestenClicked(Event event)
     {
         System.out.println("You clicked \"Testen\"");
+        openExplorer();
     }
 
     public void onImageLogboekClicked(Event event)
     {
         System.out.println("You clicked \"Logboek weergeven\"");
+        openExplorer();
     }
 
     public void onButtonBackClicked(ActionEvent actionEvent)
