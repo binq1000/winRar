@@ -38,14 +38,14 @@ public class Controller {
     private Image hoverZoekImage;
 
     public Controller() {
-        bestandImage = new Image(String.valueOf(getClass().getResource("resource/criminal1.jpg")));
-        hoverBestandImage = new Image(String.valueOf(getClass().getResource("resource/criminal2.jpg")));
+        bestandImage = new Image(String.valueOf(getClass().getResource("resource/bestandNormaal.png")));
+        hoverBestandImage = new Image(String.valueOf(getClass().getResource("resource/bestandHighlight.png")));
 
-        controleImage = new Image(String.valueOf(getClass().getResource("resource/criminal3.png")));
-        hoverControleImage = new Image(String.valueOf(getClass().getResource("resource/criminal4.jpg")));
+        controleImage = new Image(String.valueOf(getClass().getResource("resource/controleNormaal.png")));
+        hoverControleImage = new Image(String.valueOf(getClass().getResource("resource/controleHighlight.png")));
 
-        zoekImage = new Image(String.valueOf(getClass().getResource("resource/criminal2.jpg")));
-        hoverZoekImage = new Image(String.valueOf(getClass().getResource("resource/criminal3.png")));
+        zoekImage = new Image(String.valueOf(getClass().getResource("resource/zoekenNormaal.png")));
+        hoverZoekImage = new Image(String.valueOf(getClass().getResource("resource/zoekenHighlight.png")));
     }
 
 

@@ -46,17 +46,17 @@ public class BestandController
 
     public BestandController() {
         //DO NOT USE ANY FXML HERE! in the constructor
-        uitpakkenImage = new Image(String.valueOf(getClass().getResource("resource/criminal1.jpg")));
-        hoverUitpakkenImage = new Image(String.valueOf(getClass().getResource("resource/criminal2.jpg")));
+        uitpakkenImage = new Image(String.valueOf(getClass().getResource("resource/uitpakkenNormaal.png")));
+        hoverUitpakkenImage = new Image(String.valueOf(getClass().getResource("resource/uitpakkenHighlight.png")));
 
-        weergevenImage = new Image(String.valueOf(getClass().getResource("resource/criminal3.png")));
-        hoverWeergevenImage = new Image(String.valueOf(getClass().getResource("resource/criminal4.jpg")));
+        weergevenImage = new Image(String.valueOf(getClass().getResource("resource/weergevenNormaal.png")));
+        hoverWeergevenImage = new Image(String.valueOf(getClass().getResource("resource/weergevenHighlight.png")));
 
-        verwijderenImage = new Image(String.valueOf(getClass().getResource("resource/criminal2.jpg")));
-        hoverVerwijderenImage = new Image(String.valueOf(getClass().getResource("resource/criminal3.png")));
+        verwijderenImage = new Image(String.valueOf(getClass().getResource("resource/verwijderenNormaal.png")));
+        hoverVerwijderenImage = new Image(String.valueOf(getClass().getResource("resource/verwijderenHighlight.png")));
 
-        wijzigenImage = new Image(String.valueOf(getClass().getResource("resource/criminal4.jpg")));
-        hoverWijzigenImage = new Image(String.valueOf(getClass().getResource("resource/criminal1.jpg")));
+        wijzigenImage = new Image(String.valueOf(getClass().getResource("resource/wijzigenNormaal.png")));
+        hoverWijzigenImage = new Image(String.valueOf(getClass().getResource("resource/wijzigenHighlight.png")));
 
         setFilteredExplorer();
     }

@@ -45,17 +45,17 @@ public class ControleController
     public ControleController() {
         //Do not use any FXML here
 
-        virusImage = new Image(String.valueOf(getClass().getResource("resource/criminal1.jpg")));
-        hoverVirusImage = new Image(String.valueOf(getClass().getResource("resource/criminal2.jpg")));
+        virusImage = new Image(String.valueOf(getClass().getResource("resource/virusNormaal.png")));
+        hoverVirusImage = new Image(String.valueOf(getClass().getResource("resource/virusHighlight.png")));
 
-        rapportImage = new Image(String.valueOf(getClass().getResource("resource/criminal3.png")));
-        hoverRapportImage = new Image(String.valueOf(getClass().getResource("resource/criminal4.jpg")));
+        rapportImage = new Image(String.valueOf(getClass().getResource("resource/rapportNormaal.png")));
+        hoverRapportImage = new Image(String.valueOf(getClass().getResource("resource/rapportHighlight.png")));
 
-        testenImage = new Image(String.valueOf(getClass().getResource("resource/criminal2.jpg")));
-        hoverTestenImage = new Image(String.valueOf(getClass().getResource("resource/criminal3.png")));
+        testenImage = new Image(String.valueOf(getClass().getResource("resource/testenNormaal.png")));
+        hoverTestenImage = new Image(String.valueOf(getClass().getResource("resource/testenHighlight.png")));
 
-        logboekImage = new Image(String.valueOf(getClass().getResource("resource/criminal4.jpg")));
-        hoverLogboekImage = new Image(String.valueOf(getClass().getResource("resource/criminal1.jpg")));
+        logboekImage = new Image(String.valueOf(getClass().getResource("resource/logboekNormaal.png")));
+        hoverLogboekImage = new Image(String.valueOf(getClass().getResource("resource/logboekHighlight.png")));
 
 
         setFilteredExplorer();
@@ -171,12 +171,12 @@ public class ControleController
 
     public void onImageLogobkeMouseExited(Event event)
     {
-        imageLogboek.setImage(testenImage);
+        imageLogboek.setImage(logboekImage);
     }
 
     public void onImageTestenMouseExited(Event event)
     {
-        imageTesten.setImage(virusImage);
+        imageTesten.setImage(testenImage);
     }
 
     public void onImageLogboekMouseEntered(Event event)
