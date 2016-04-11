@@ -26,7 +26,7 @@ public class BestandController
     @FXML public ImageView imageWeergeven;
     @FXML public ImageView imageVerwijderen;
     @FXML public ImageView imageWijzigen;
-    @FXML public Button buttonBack;
+    @FXML public ImageView imageBack;
     @FXML public AnchorPane anchorPane;
 
     private FileChooser fileChooser;
@@ -43,6 +43,8 @@ public class BestandController
     private Image wijzigenImage;
     private Image hoverWijzigenImage;
 
+    private Image backImage;
+
 
     public BestandController() {
         //DO NOT USE ANY FXML HERE! in the constructor
@@ -58,6 +60,8 @@ public class BestandController
         wijzigenImage = new Image(String.valueOf(getClass().getResource("resource/wijzigenNormaal.png")));
         hoverWijzigenImage = new Image(String.valueOf(getClass().getResource("resource/wijzigenHighlight.png")));
 
+        backImage = new Image(String.valueOf(getClass().getResource("resource/arrowBack.png")));
+
         setFilteredExplorer();
     }
 
@@ -66,6 +70,8 @@ public class BestandController
         imageVerwijderen.setImage(verwijderenImage);
         imageWeergeven.setImage(weergevenImage);
         imageWijzigen.setImage(wijzigenImage);
+        imageBack.setImage(backImage);
+
     }
     
     
@@ -153,9 +159,9 @@ public class BestandController
     }
     //endregion
 
-    public void onButtonBackClicked(ActionEvent actionEvent)
+    public void onButtonBackClicked()
     {
-        Stage stage = (Stage) buttonBack.getScene().getWindow();
+        Stage stage = (Stage) imageBack.getScene().getWindow();
         stage.setTitle("WinRAR");
 
         FXMLLoader        loader      = new FXMLLoader(getClass().getResource("hoofdscherm.fxml"));

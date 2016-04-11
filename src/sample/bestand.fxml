@@ -13,8 +13,8 @@
     <children>
         <ImageView fx:id="imageUitpakken" fitHeight="150.0" fitWidth="150.0" layoutY="125.0" onMouseClicked="#onImageUitpakkenClicked" onMouseEntered="#onImageUitpakkenMouseEntered" onMouseExited="#onImageUitpakkenMouseExited" pickOnBounds="true" preserveRatio="true" />
         <ImageView fx:id="imageWeergeven" fitHeight="150.0" fitWidth="150.0" layoutX="150.0" layoutY="125.0" onMouseClicked="#onImageWeergevenClicked" onMouseEntered="#onImageWeergevenMouseEntered" onMouseExited="#onImageWeergevenMouseExited" pickOnBounds="true" preserveRatio="true" />
-        <ImageView fx:id="imageVerwijderen" fitHeight="150.0" fitWidth="150.0" layoutX="450.0" layoutY="125.0" onMouseClicked="#onImageVerwijderenClicked" onMouseEntered="#onImageVerwijderenMouseEntered" onMouseExited="#onImageVerwijderenMouseExited" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imageWijzigen" fitHeight="150.0" fitWidth="150.0" layoutX="300.0" layoutY="125.0" onMouseClicked="#onImageWijzigenClicked" onMouseEntered="#onImageWijzigenMouseEntered" onMouseExited="#onImageWijizigenMouseExited" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="buttonBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onButtonBackClicked" text="Back" />
+        <ImageView fx:id="imageVerwijderen" fitHeight="150.0" fitWidth="150.0" layoutX="450.0" layoutY="125.0" onMouseClicked="#onImageVerwijderenClicked" onMouseEntered="#onImageVerwijderenMouseEntered" onMouseExited="#onImageVerwijderenMouseExited" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageBack" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#onButtonBackClicked" pickOnBounds="true" preserveRatio="true" />
     </children>
 </AnchorPane>

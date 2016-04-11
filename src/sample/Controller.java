@@ -37,6 +37,9 @@ public class Controller {
     private Image zoekImage;
     private Image hoverZoekImage;
 
+    private int screenHeight;
+    private int screenWidth;
+
     public Controller() {
         bestandImage = new Image(String.valueOf(getClass().getResource("resource/bestandNormaal.png")));
         hoverBestandImage = new Image(String.valueOf(getClass().getResource("resource/bestandHighlight.png")));
@@ -46,6 +49,9 @@ public class Controller {
 
         zoekImage = new Image(String.valueOf(getClass().getResource("resource/zoekenNormaal.png")));
         hoverZoekImage = new Image(String.valueOf(getClass().getResource("resource/zoekenHighlight.png")));
+
+        screenWidth = 640;
+        screenHeight = 240;
     }
 
 
@@ -76,7 +82,7 @@ public class Controller {
             e.printStackTrace();
         }
 
-        stage.setScene(new Scene(root, 640, 480));
+        stage.setScene(new Scene(root, screenWidth, screenHeight));
 
         zController.setData();
     }
@@ -101,7 +107,7 @@ public class Controller {
             e.printStackTrace();
         }
 
-        stage.setScene(new Scene(root, 640, 480));
+        stage.setScene(new Scene(root, screenWidth, screenHeight));
 
         bController.setStartImages();
     }
@@ -127,7 +133,7 @@ public class Controller {
             e.printStackTrace();
         }
 
-        stage.setScene(new Scene(root, 640, 480));
+        stage.setScene(new Scene(root, screenWidth, screenHeight));
 
         cController.setStartImages();
     }

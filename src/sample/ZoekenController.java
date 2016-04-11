@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -22,16 +24,18 @@ import java.io.IOException;
 public class ZoekenController
 {
 
-    @FXML private Button buttonBack;
+    @FXML private ImageView imageBack;
     @FXML private TextField txtInput;
     @FXML private TableView tableData;
+    private Image backImage;
 
     public ZoekenController() {
         //Do not use FXML in the constructor
+        backImage = new Image(String.valueOf(getClass().getResource("resource/arrowBack.png")));
     }
 
     public void setData() {
-
+        imageBack.setImage(backImage);
 
         for (File f : File.listRoots()) {
             System.out.println(f.toString());
@@ -45,9 +49,9 @@ public class ZoekenController
         }
     }
     
-    public void onButtonBackClicked(ActionEvent actionEvent)
+    public void onButtonBackClicked()
     {
-        Stage stage = (Stage) buttonBack.getScene().getWindow();
+        Stage stage = (Stage) imageBack.getScene().getWindow();
         stage.setTitle("WinRAR");
 
         FXMLLoader loader     = new FXMLLoader(getClass().getResource("hoofdscherm.fxml"));

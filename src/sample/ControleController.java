@@ -28,7 +28,7 @@ public class ControleController
     @FXML public ImageView imageRapport;
     @FXML public ImageView imageTesten;
     @FXML public ImageView imageLogboek;
-    @FXML public Button buttonBack;
+    @FXML public ImageView imageBack;
     @FXML public AnchorPane anchorPane;
 
     private Image virusImage;
@@ -39,6 +39,7 @@ public class ControleController
     private Image hoverTestenImage;
     private Image logboekImage;
     private Image hoverLogboekImage;
+    private Image backImage;
 
     private FileChooser fileChooser;
 
@@ -57,6 +58,7 @@ public class ControleController
         logboekImage = new Image(String.valueOf(getClass().getResource("resource/logboekNormaal.png")));
         hoverLogboekImage = new Image(String.valueOf(getClass().getResource("resource/logboekHighlight.png")));
 
+        backImage = new Image(String.valueOf(getClass().getResource("resource/arrowBack.png")));
 
         setFilteredExplorer();
     }
@@ -112,9 +114,9 @@ public class ControleController
         createDialog("Showing an invisible log at the moment!");
     }
 
-    public void onButtonBackClicked(ActionEvent actionEvent)
+    public void onButtonBackClicked()
     {
-        Stage stage = (Stage) buttonBack.getScene().getWindow();
+        Stage stage = (Stage) imageBack.getScene().getWindow();
         stage.setTitle("WinRAR");
 
         FXMLLoader loader     = new FXMLLoader(getClass().getResource("hoofdscherm.fxml"));
@@ -142,6 +144,7 @@ public class ControleController
         imageRapport.setImage(rapportImage);
         imageTesten.setImage(testenImage);
         imageVirus.setImage(virusImage);
+        imageBack.setImage(backImage);
     }
 
     public void onImageVirusMouseEntered(Event event)
