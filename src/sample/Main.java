@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -23,6 +24,9 @@ public class Main extends Application {
         primaryStage.show();
 
         c.setStartImages();
+
+        Image icon = new Image(String.valueOf(getClass().getResource("resource/winrarIcon.png")));
+        primaryStage.getIcons().add(icon);
     }
 
 

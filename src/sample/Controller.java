@@ -40,6 +40,8 @@ public class Controller {
     private int screenHeight;
     private int screenWidth;
 
+    private Image icon;
+
     public Controller() {
         bestandImage = new Image(String.valueOf(getClass().getResource("resource/bestandNormaal.png")));
         hoverBestandImage = new Image(String.valueOf(getClass().getResource("resource/bestandHighlight.png")));
@@ -50,8 +52,10 @@ public class Controller {
         zoekImage = new Image(String.valueOf(getClass().getResource("resource/zoekenNormaal.png")));
         hoverZoekImage = new Image(String.valueOf(getClass().getResource("resource/zoekenHighlight.png")));
 
+        icon = new Image(String.valueOf(getClass().getResource("resource/winrarIcon.png")));
+
         screenWidth = 640;
-        screenHeight = 240;
+        screenHeight = 480;
     }
 
 
@@ -67,6 +71,9 @@ public class Controller {
         System.out.println("You clicked \"Zoeken\"");
         Stage stage = (Stage) imageBestand.getScene().getWindow();
         stage.setTitle("WinRAR - Zoeken");
+
+
+        stage.getIcons().add(icon);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("zoeken.fxml"));
         ZoekenController zController = new ZoekenController();
@@ -92,6 +99,8 @@ public class Controller {
         System.out.println("You clicked \"Bestand\"");
         Stage stage = (Stage) imageBestand.getScene().getWindow();
         stage.setTitle("WinRAR - Bestand");
+
+        stage.getIcons().add(icon);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("bestand.fxml"));
         BestandController bController = new BestandController();
@@ -119,6 +128,8 @@ public class Controller {
         Stage stage = (Stage) imageBestand.getScene().getWindow();
         stage.setTitle("WinRAR - Controle");
 
+        stage.getIcons().add(icon);
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("controle.fxml"));
         ControleController cController = new ControleController();
         loader.setController(cController);
@@ -133,7 +144,7 @@ public class Controller {
             e.printStackTrace();
         }
 
-        stage.setScene(new Scene(root, screenWidth, screenHeight));
+        stage.setScene(new Scene(root, screenWidth, 240));
 
         cController.setStartImages();
     }
