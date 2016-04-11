@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
@@ -40,6 +41,7 @@ public class ControleController
     private Image logboekImage;
     private Image hoverLogboekImage;
     private Image backImage;
+    private Color color;
 
     private FileChooser fileChooser;
 
@@ -60,6 +62,7 @@ public class ControleController
 
         backImage = new Image(String.valueOf(getClass().getResource("resource/arrowBack.png")));
 
+        color = javafx.scene.paint.Color.rgb(101, 109, 208);
         setFilteredExplorer();
     }
 
@@ -133,7 +136,7 @@ public class ControleController
             e.printStackTrace();
         }
 
-        stage.setScene(new Scene(root, 640, 480));
+        stage.setScene(new Scene(root, 640, 480, color));
 
         controller.setStartImages();
     }

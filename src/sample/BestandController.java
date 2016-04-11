@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -45,6 +46,8 @@ public class BestandController
 
     private Image backImage;
 
+    private Color color;
+
 
     public BestandController() {
         //DO NOT USE ANY FXML HERE! in the constructor
@@ -61,6 +64,8 @@ public class BestandController
         hoverWijzigenImage = new Image(String.valueOf(getClass().getResource("resource/wijzigenHighlight.png")));
 
         backImage = new Image(String.valueOf(getClass().getResource("resource/arrowBack.png")));
+
+        color = javafx.scene.paint.Color.rgb(101, 109, 208);
 
         setFilteredExplorer();
     }
@@ -178,7 +183,7 @@ public class BestandController
             e.printStackTrace();
         }
 
-        stage.setScene(new Scene(root, 640, 480));
+        stage.setScene(new Scene(root, 640, 480, color));
 
         controller.setStartImages();
     }

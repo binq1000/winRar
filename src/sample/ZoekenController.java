@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -28,10 +29,12 @@ public class ZoekenController
     @FXML private TextField txtInput;
     @FXML private TableView tableData;
     private Image backImage;
+    private Color color;
 
     public ZoekenController() {
         //Do not use FXML in the constructor
         backImage = new Image(String.valueOf(getClass().getResource("resource/arrowBack.png")));
+        color = javafx.scene.paint.Color.rgb(101, 109, 208);
     }
 
     public void setData() {
@@ -68,7 +71,7 @@ public class ZoekenController
             e.printStackTrace();
         }
 
-        stage.setScene(new Scene(root, 640, 480));
+        stage.setScene(new Scene(root, 640, 480, color));
 
         controller.setStartImages();
     }

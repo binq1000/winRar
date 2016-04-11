@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -20,7 +21,7 @@ public class Main extends Application {
 
         Parent root = loader.load();
         primaryStage.setTitle("WinRAR");
-        primaryStage.setScene(new Scene(root, 640, 480));
+        primaryStage.setScene(new Scene(root, 640, 480, Color.rgb(101, 109, 208)));
         primaryStage.show();
 
         c.setStartImages();

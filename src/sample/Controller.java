@@ -9,9 +9,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.*;
 import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -42,6 +45,8 @@ public class Controller {
 
     private Image icon;
 
+    private javafx.scene.paint.Color color;
+
     public Controller() {
         bestandImage = new Image(String.valueOf(getClass().getResource("resource/bestandNormaal.png")));
         hoverBestandImage = new Image(String.valueOf(getClass().getResource("resource/bestandHighlight.png")));
@@ -54,6 +59,8 @@ public class Controller {
 
         icon = new Image(String.valueOf(getClass().getResource("resource/winrarIcon.png")));
 
+        color = javafx.scene.paint.Color.rgb(101, 109, 208);
+
         screenWidth = 640;
         screenHeight = 480;
     }
@@ -63,6 +70,8 @@ public class Controller {
         imageBestand.setImage(bestandImage);
         imageControle.setImage(controleImage);
         imageZoek.setImage(zoekImage);
+
+
     }
 
     public void onInputZoekMouseClicked(Event event)
@@ -89,7 +98,7 @@ public class Controller {
             e.printStackTrace();
         }
 
-        stage.setScene(new Scene(root, screenWidth, screenHeight));
+        stage.setScene(new Scene(root, screenWidth, screenHeight, javafx.scene.paint.Color.rgb(101, 109, 208)));
 
         zController.setData();
     }
@@ -116,7 +125,7 @@ public class Controller {
             e.printStackTrace();
         }
 
-        stage.setScene(new Scene(root, screenWidth, screenHeight));
+        stage.setScene(new Scene(root, screenWidth, screenHeight, javafx.scene.paint.Color.rgb(101, 109, 208)));
 
         bController.setStartImages();
     }
@@ -144,7 +153,7 @@ public class Controller {
             e.printStackTrace();
         }
 
-        stage.setScene(new Scene(root, screenWidth, 240));
+        stage.setScene(new Scene(root, screenWidth, 240, javafx.scene.paint.Color.rgb(101, 109, 208)));
 
         cController.setStartImages();
     }
